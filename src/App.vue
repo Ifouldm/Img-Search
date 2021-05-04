@@ -22,7 +22,7 @@ export default Vue.extend({
         Selector,
     },
     methods: {
-        changeSubreddit(searchTerm) {
+        changeSubreddit(searchTerm: string) {
             this.searchTerm = searchTerm;
         },
     },
@@ -30,12 +30,6 @@ export default Vue.extend({
 </script>
 
 <style>
-#app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-}
 * {
     margin: 0;
     padding: 0;

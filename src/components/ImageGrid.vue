@@ -44,7 +44,7 @@ export default Vue.extend({
         return {
             images: new Array<GalleryModel>(),
             loading: true,
-            error: null,
+            error: "",
         };
     },
     components: {
@@ -75,13 +75,16 @@ export default Vue.extend({
                     },
                 })
                 .then((res) => {
+                    console.log(res);
+
                     this.loading = false;
                     this.images = res.data.data as GalleryModel[];
                     this.reDraw();
                 })
                 .catch((error) => {
+                    console.log(error);
                     this.loading = false;
-                    this.error = error;
+                    this.error = error.toString();
                 });
         },
         reDraw: function() {

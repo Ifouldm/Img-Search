@@ -14,6 +14,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { ImageAlbumModel } from "../models/imageAlbum";
 import VideoElement from "../components/Video.vue";
 import SingleImage from "../components/SingleImage.vue";
 
@@ -24,7 +25,7 @@ export default Vue.extend({
         };
     },
     props: {
-        image: {},
+        image: Object as () => ImageAlbumModel,
     },
     methods: {
         prev() {
