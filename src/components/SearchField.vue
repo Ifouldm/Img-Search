@@ -1,15 +1,17 @@
 <template>
-    <form class="searchbar" @submit.prevent="search">
-        <div class="textfield">
-            <input
-                id="searchField"
-                type="text"
-                v-model="searchTerm"
-                @submit="search"
-            />
-        </div>
-        <button class="button" @click="search">Search</button>
-    </form>
+    <div class="searchbar">
+        <form class="searchform" @submit.prevent="search">
+            <div class="textfield">
+                <input
+                    id="searchField"
+                    type="text"
+                    v-model="searchTerm"
+                    @submit="search"
+                />
+            </div>
+            <button class="button" @click="search">Search</button>
+        </form>
+    </div>
 </template>
 
 <script>
@@ -31,6 +33,8 @@ export default Vue.extend({
 
 <style scoped>
 .searchbar {
+    display: flex;
+    justify-content: center;
     padding: 1rem;
 }
 

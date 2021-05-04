@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <Selector @searchTerm="changeSubreddit" />
+        <SearchField @searchTerm="changeSubreddit" />
         <ImageGrid :searchTerm="searchTerm" />
     </div>
 </template>
@@ -8,7 +8,7 @@
 <script lang="ts">
 import Vue from "vue";
 import ImageGrid from "./components/ImageGrid.vue";
-import Selector from "./components/Selector.vue";
+import SearchField from "./components/SearchField.vue";
 
 export default Vue.extend({
     name: "App",
@@ -19,7 +19,7 @@ export default Vue.extend({
     },
     components: {
         ImageGrid,
-        Selector,
+        SearchField,
     },
     methods: {
         changeSubreddit(searchTerm: string) {

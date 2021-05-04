@@ -1,17 +1,18 @@
 <template>
     <div class="results">
         <h3>{{ searchTerm }}</h3>
+        <button class="button" v-on:click="reDraw">Redraw</button>
         <Loading v-if="loading" />
         <Error v-else-if="error" :error="error" />
         <div v-else-if="images.length === 0">No results</div>
         <div
             v-masonry
             transition-duration="3s"
+            fit-width="true"
             item-selector=".item"
             class="masonry-container"
             v-else
         >
-            <button class="button" v-on:click="reDraw">Redraw</button>
             <div
                 v-masonry-tile
                 class="item"
@@ -75,14 +76,11 @@ export default Vue.extend({
                     },
                 })
                 .then((res) => {
-                    console.log(res);
-
                     this.loading = false;
                     this.images = res.data.data as GalleryModel[];
                     this.reDraw();
                 })
                 .catch((error) => {
-                    console.log(error);
                     this.loading = false;
                     this.error = error.toString();
                 });
@@ -106,10 +104,14 @@ export default Vue.extend({
 }
 
 .masonry-container {
-    width: 60%;
+    background-color: #fafafa;
+    width: 80%;
 }
 
 .item {
+    margin: 1rem;
+    border-radius: 0.5rem;
+    background-color: white;
     max-height: 300px;
     max-width: 300px;
 }

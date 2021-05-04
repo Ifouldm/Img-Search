@@ -52,6 +52,7 @@ export default Vue.extend({
 
 <style scoped>
 .button {
+    font-size: 1.5rem;
     border-radius: 0.2rem;
     border: none;
     box-shadow: 2px 2px #0b414121;
